@@ -1,0 +1,11 @@
+/Portafolio/README_SETUP.md
+/Portafolio/DATOS_PORTAFOLIO.md
+
+node_modules/
+.astro/
+.dist/
+package-lock.json
+pnpm-lock.yaml
+.DS_Store
+npm-debug.log*
+yarn-error.log*
