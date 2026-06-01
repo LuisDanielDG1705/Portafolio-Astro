@@ -1,0 +1,18 @@
+---
+import SectionHeader from './SectionHeader.astro';
+const { skills } = Astro.props;
+---
+<section id="skills" class="panel skills-panel">
+  <SectionHeader title="Habilidades Técnicas" />
+  <div class="skills-content">
+    <p class="skills-text">Distintas tecnologías que manejo: Python, Java, MySQL, PostgreSQL, FastAPI, Git, GitHub, Flask, HTML5, CSS y JavaScript.</p>
+    <ul class="skills-logos">
+      {skills.map((skill) => (
+        <li class="skill-logo-item">
+          <span class={`skill-logo icon ${skill.iconClass}`} title={skill.title}></span>
+          <span class="skill-logo-label">{skill.title}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

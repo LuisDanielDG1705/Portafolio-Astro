@@ -1,0 +1,26 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import ProjectCard from './ProjectCard.astro';
+const { featuredProject, otherProjects } = Astro.props;
+---
+<section id="projects" class="panel projects-panel">
+  <SectionHeader title="Proyectos Destacados" subtitle="Un proyecto principal con más énfasis y tres trabajos adicionales." />
+  <div class="featured-project">
+    <div class="featured-info">
+      <h3>{featuredProject.title}</h3>
+      <p class="project-description">{featuredProject.description}</p>
+    </div>
+    <div class="featured-images">
+      {featuredProject.images.map((image) => (
+        <div class="featured-image">
+          <img src={image.src} alt={image.alt} />
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="other-projects">
+    {otherProjects.map((project) => (
+      <ProjectCard {...project} />
+    ))}
+  </div>
+</section>

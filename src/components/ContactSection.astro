@@ -1,0 +1,10 @@
+---
+import SectionHeader from './SectionHeader.astro';
+const { contactText } = Astro.props;
+---
+<section id="contact" class="panel">
+  <SectionHeader title="Ponerse en Contacto" subtitle={contactText.title} />
+  <div class="contact-content contact-card">
+    <p class="contact-email">📧 <a href={`mailto:${contactText.email}`}>{contactText.email}</a></p>
+  </div>
+</section>

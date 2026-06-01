@@ -1,0 +1,12 @@
+---
+import SectionHeader from './SectionHeader.astro';
+const { aboutItems } = Astro.props;
+---
+<section id="about" class="panel">
+  <SectionHeader title="Sobre Mí" />
+  <div class="about-content">
+    {aboutItems.map((item) => (
+      <p>{item}</p>
+    ))}
+  </div>
+</section>
