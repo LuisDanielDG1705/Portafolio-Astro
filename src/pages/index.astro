@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import ProjectsSection from '../components/ProjectsSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+import {
+  siteMeta,
+  socialLinks,
+  skills,
+  featuredProject,
+  otherProjects,
+  aboutItems,
+  contactText
+} from '../data/portfolio.ts';
+---
+<BaseLayout title={siteMeta.title} description={siteMeta.description}>
+  <HeroSection siteMeta={siteMeta} socialLinks={socialLinks} />
+  <SkillsSection skills={skills} />
+  <ProjectsSection featuredProject={featuredProject} otherProjects={otherProjects} />
+  <AboutSection aboutItems={aboutItems} />
+  <ContactSection contactText={contactText} />
+  <Footer />
+</BaseLayout>
