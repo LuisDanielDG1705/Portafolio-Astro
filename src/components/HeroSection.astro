@@ -2,27 +2,25 @@
 const { siteMeta, socialLinks } = Astro.props;
 ---
 <header id="header">
-  <div class="header-content">
+  <div class="header-content profile-card">
     <img src={siteMeta.avatarUrl} alt={siteMeta.title} class="avatar" />
-    <h1>{siteMeta.title}</h1>
-    <p class="title">Desarrollador Multiplataforma | Estudiante</p>
-    <p class="bio">Estudiante de Desarrollo Multiplataforma con afinidad en desarrollo web y de backend con Python.</p>
-    <nav class="social-nav">
-      <ul>
+    <div class="profile-card-body">
+      <h1>{siteMeta.title}</h1>
+      <p class="title">Estudiante de Desarrollo Multiplataforma</p>
+      <p class="bio">Estudiante de Desarrollo Multiplataforma con afinidad en desarrollo web y de backend con Python.</p>
+      <div class="profile-links">
         {socialLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class={`icon ${link.iconClass}`}
-              title={link.label}
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            >
-              <span class="label">{link.label}</span>
-            </a>
-          </li>
+          <a
+            href={link.href}
+            class={`profile-link icon ${link.iconClass}`}
+            title={link.label}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            <span class="link-label">{link.label}</span>
+          </a>
         ))}
-      </ul>
-    </nav>
+      </div>
+    </div>
   </div>
 </header>

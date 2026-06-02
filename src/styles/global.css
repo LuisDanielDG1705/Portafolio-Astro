@@ -86,15 +86,52 @@ button, input, select, textarea {
   border-radius: 28px;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.24);
 }
+.profile-card {
+  text-align: center;
+}
+.profile-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+}
+.profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: #fff;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.profile-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+.profile-link:active {
+  transform: translateY(0);
+}
+.profile-link .link-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
 #header {
   display: inline-block;
   width: 90%;
   max-width: 960px;
   margin: 0 auto 2rem;
-  opacity: 0;
-  animation: header 1s 0.5s forwards;
+  opacity: 1;
+  animation: header 0.8s 0.2s ease-out;
   position: relative;
-  top: -1rem;
+  top: 0;
 }
 #header h1 {
   font-size: clamp(2.75rem, 5vw, 4.35rem);
@@ -127,6 +164,8 @@ button, input, select, textarea {
   line-height: 1.7;
   opacity: 0.85;
   font-weight: 300;
+  text-align: center;
+  margin: 0 auto;
 }
 .social-nav {
   margin-top: 1rem;
