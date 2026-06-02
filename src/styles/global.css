@@ -1,3 +1,5 @@
+@import url("../../html5up-aerial/assets/css/fontawesome-all.min.css");
+
 html {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
@@ -10,8 +12,8 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
 }
 body {
   min-height: 100vh;
-  background: radial-gradient(circle at top left, rgba(72, 181, 215, 0.12), transparent 30%), linear-gradient(180deg, #05111f 0%, #081a2c 100%);
-  color: #f5f8ff;
+  background: #348cb2;
+  color: #fff;
   line-height: 1.75;
   overflow-x: hidden;
   font-size: 1rem;
@@ -43,15 +45,22 @@ button, input, select, textarea {
 #bg {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, rgba(6, 140, 178, 0.18), rgba(4, 11, 34, 0.92) 52%, rgba(1, 6, 16, 0.98));
+  background: #348cb2 url('../../html5up-aerial/assets/css/images/bg.jpg') bottom left;
+  background-repeat: repeat-x;
+  /* template moving background */
   animation: bg 60s linear infinite;
+  background-size: 2250px auto;
+  width: 6750px;
   z-index: -2;
 }
 #overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 25%), linear-gradient(180deg, rgba(17, 44, 66, 0.08), rgba(0,0,0,0.35));
+  background-image: url('../../html5up-aerial/assets/css/images/overlay-pattern.png'), url('../../html5up-aerial/assets/css/images/overlay.svg');
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
   opacity: 0;
   animation: overlay 1.5s 1.5s forwards;
   z-index: -1;
