@@ -1,0 +1,19 @@
+---
+type SocialLink = {
+  href: string;
+  icon: string;
+  label: string;
+};
+const { links = [] as SocialLink[] } = Astro.props;
+---
+<nav>
+  <ul>
+    {links.map((link: SocialLink) => (
+      <li>
+        <a href={link.href} class={`icon ${link.icon}`}>
+          <span class="label">{link.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

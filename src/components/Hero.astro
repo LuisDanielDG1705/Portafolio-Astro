@@ -1,0 +1,18 @@
+---
+import SocialLinks from './SocialLinks.astro';
+type SocialLink = {
+  href: string;
+  icon: string;
+  label: string;
+};
+const {
+  heading = 'Adam Jensen',
+  subtitle = 'Security Chief • Cyborg • Never asked for this',
+  socialLinks = [] as SocialLink[],
+} = Astro.props;
+---
+<header id="header">
+  <h1>{heading}</h1>
+  <p>{subtitle}</p>
+  <SocialLinks links={socialLinks} />
+</header>

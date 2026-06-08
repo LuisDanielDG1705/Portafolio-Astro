@@ -1,6 +1,11 @@
 ---
-import { currentYear } from '../utils/site.ts';
+const {
+  copyright = '© Untitled',
+  designText = 'Design:',
+  designUrl = 'http://html5up.net',
+  designLabel = 'HTML5 UP',
+} = Astro.props;
 ---
 <footer id="footer">
-  <span class="copyright">&copy; {currentYear} Luis Daniel Diasgiron Galindo. Desarrollado con Astro.</span>
+  <span>{copyright} {designText} <a href={designUrl}>{designLabel}</a>.</span>
 </footer>

@@ -1,38 +1,25 @@
 ---
-import '../styles/global.css';
-import siteScriptUrl from '../scripts/site.ts?url';
-const title = Astro.props.title ?? 'Portafolio de Luis Daniel Diasgiron Galindo';
-const description =
-  Astro.props.description ??
-  'Portafolio modular en Astro con fidelización visual, responsive y comportamiento original.';
+import Background from '../components/Background.astro';
+const { title = 'Aerial by HTML5 UP', description = 'Aerial template converted to Astro' } = Astro.props;
 ---
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
   </head>
   <body class="is-preload">
-    <div id="wrapper">
-      <div id="bg"></div>
-      <div id="overlay"></div>
-      <div id="main">
-        <slot />
-      </div>
-    </div>
-    <script type="module" src={siteScriptUrl}></script>
+    <Background>
+      <slot />
+    </Background>
+    <script>
+      window.onload = function() { document.body.classList.remove('is-preload'); }
+      window.ontouchmove = function() { return false; }
+      window.onorientationchange = function() { document.body.scrollTop = 0; }
+    </script>
   </body>
 </html>
